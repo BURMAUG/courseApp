@@ -27,13 +27,10 @@ public class CourseServiceImpl implements CourseService{
         courseRepository.save(course);
     }
 
-//    @Override
-//    public void deleteById(Long id) {
-//        courseRepository.deleteCourseByCourse_id(id);
-//    }
+    @Override
+    public void deleteById(Long id) {
+        courseRepository.deleteById(id);
+    }
 
-//    @Override
-//    public Course findCourseById(Long id) {
-//        return courseRepository.findByCourse_id(id);
-//    }
+
 }

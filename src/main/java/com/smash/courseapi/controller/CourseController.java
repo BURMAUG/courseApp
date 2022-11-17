@@ -19,12 +19,17 @@ public class CourseController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Course> retrieveCourseById(@PathVariable Long id){
+    public Optional<Course> retrieveCourseById(@PathVariable("id") Long id){
         return courseService.findCourse(id);
     }
 
     @PostMapping("/course")
     public void addCourse(@RequestBody Course course){
         courseService.save(course);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCourse(@PathVariable("id") Long id){
+        courseService.deleteById(id);
     }
 }
